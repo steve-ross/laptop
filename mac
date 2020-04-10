@@ -240,8 +240,8 @@ brew "yarn"
 cask "gpg-suite"
 
 # Databases
-brew "postgres", restart_service: :changed
-brew "redis", restart_service: :changed
+brew "redis"
+brew "mongodb/brew/mongodb-community"
 EOF
 
 fancy_echo "Update heroku binary ..."
