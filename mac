@@ -237,7 +237,7 @@ brew "imagemagick"
 brew "libyaml" # should come after openssl
 brew "coreutils"
 brew "yarn"
-cask "gpg-suite"
+cask "gpg"
 
 # Databases
 brew "redis"
