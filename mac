@@ -169,8 +169,8 @@ update_shell() {
 install_homebrew
 
 case "$SHELL" in
-  */zsh)
-    if [ "$(command -v zsh)" != '/usr/local/bin/zsh' ] ; then
+  */fish)
+    if [ "$(command -v fish)" != '/usr/local/bin/fish' ] ; then
       update_shell
     fi
     ;;
