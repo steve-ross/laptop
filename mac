@@ -231,7 +231,7 @@ brew "parity"
 brew "hub"
 
 # Image manipulation
-brew "imagemagick"
+brew "graphicsmagick"
 
 # Programming language prerequisites and package managers
 brew "libyaml" # should come after openssl
