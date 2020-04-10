@@ -225,7 +225,9 @@ brew "zsh"
 
 # Heroku
 brew "heroku/brew/heroku"
-brew "parity"
+
+# AWS
+brew "awscli"
 
 # GitHub
 brew "git-flow"
