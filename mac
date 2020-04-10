@@ -213,16 +213,18 @@ tap "heroku/brew"
 tap "shopify/shopify"
 
 # Unix
-brew "universal-ctags", args: ["HEAD"]
+brew "autojump"
+brew "direnv"
 brew "git"
 brew "openssl"
-brew "rcm"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
+brew "python"
+brew "python@2"
+brew "rename"
+brew "starship"
+brew "terminal-notifier"
 brew "vim"
 brew "watchman"
-brew "zsh"
+brew "wget"
 
 # Heroku
 brew "heroku/brew/heroku"
