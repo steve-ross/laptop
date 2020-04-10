@@ -239,6 +239,10 @@ brew "coreutils"
 brew "yarn"
 cask "gpg"
 
+# Tools
+brew "iterm2"
+cask "visual-studio-code"
+
 # Databases
 brew "redis"
 brew "mongodb/brew/mongodb-community"
