@@ -232,6 +232,9 @@ brew "heroku/brew/heroku"
 # AWS
 brew "awscli"
 
+# Shopify Themekit
+brew "shopify/shopify/themekit"
+
 # GitHub
 brew "git-flow"
 brew "hub"
