@@ -166,6 +166,8 @@ update_shell() {
   fi
 }
 
+install_homebrew
+
 case "$SHELL" in
   */zsh)
     if [ "$(command -v zsh)" != '/usr/local/bin/zsh' ] ; then
