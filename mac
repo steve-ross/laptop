@@ -228,6 +228,7 @@ brew "heroku/brew/heroku"
 brew "parity"
 
 # GitHub
+brew "git-flow"
 brew "hub"
 
 # Image manipulation
