@@ -46,7 +46,7 @@ _log() {
 }
 
 # shellcheck disable=SC2154
-trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret' EXIT
+trap 'ret=$?; test $ret -ne 0 && printf "failed\n\n" >&2; exit $ret ERR' EXIT
 
 set -e
 
@@ -145,7 +145,8 @@ setup_fish(){
 
 update_shell() {
   local shell_path;
-  shell_path="$(command -v fish)"
+  _log $shell_path
+  shell_path="$(command -V fish)"
   if [ -z "$shell_path" ]; then
     _log "Installing fish shell..."
     brew install fish
@@ -156,7 +157,6 @@ update_shell() {
   if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
     _log "Adding '$shell_path' to /etc/shells"
     sudo sh -c "echo $shell_path >> /etc/shells"
-  fi
   sudo chsh -s "$shell_path" "$USER"
   fi
 }
@@ -185,6 +185,8 @@ brew bundle --file=- <<EOF
 tap "mongodb/brew"
 tap "heroku/brew"
 tap "shopify/shopify"
+tap "homebrew/cask-fonts"
+
 
 # Unix
 brew "autojump"
@@ -192,7 +194,16 @@ brew "direnv"
 brew "git"
 brew "openssl"
 brew "python"
-brew "python@2"
+# brew "python@2"
+# ERROR: Error: No available formula with the name "python@2"
+# ==> Searching for a previously deleted formula (in the last month)...
+# Error: No previously deleted formula found.
+# Error: No similarly named formulae found.
+# ==> Searching taps on GitHub...
+# ==> Searching for similarly named formulae...
+# ==> Searching taps...
+# Error: No formulae found in taps.
+# Installing python@2 has failed!
 brew "rename"
 brew "starship"
 brew "terminal-notifier"
@@ -219,11 +230,25 @@ brew "graphicsmagick"
 # Programming language prerequisites and package managers
 brew "coreutils"
 brew "yarn"
-cask "gpg"
+
+# cask "gpg"
+# ERROR: Cask 'gpg' is unavailable: No Cask with this name exists. Did you mean one of these?
+# gpg-suite
+# gpg-suite-no-mail
+# gpg-suite-pinentry
+# gpg-sync
+# Installing gpg has failed!
 
 # Tools
-brew "iterm2"
+cask "iterm2"
 cask "visual-studio-code"
+cask "envkey"
+cask "slack"
+#cask "google-chrome"
+#disabled to save time, renable when deployed.
+cask "robo-3t"
+cask "font-hack-nerd-font"
+cask "spectacle"
 
 # Databases
 brew "redis"
@@ -232,11 +257,37 @@ EOF
 
 _log "Update heroku binary ..."
 brew unlink heroku
-brew link --force heroku
+brew link -f heroku
 
 _log "Installing NVM (Node Version Manager) ..."
+if command -v nvm --version; then
+  echo "nvm installed"
+  else
+  echo "no nvm, installing"
+fi
+#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh
 
-_log "Installing direnv helpers..."
+_log "Checking direnv helpers..."
+if test -f "$HOME/.config/direnv/helpers.sh"; then
+  echo "Direnv helpers already installed"
+  else
+  echo "Installing direnv helpers..."
+  curl -o ~/.config/direnv/helpers.sh --create-dirs https://raw.githubusercontent.com/steve-ross/direnv-helpers/master/helpers.sh && echo -n "source ~/.config/direnv/helpers.sh" >> ~/.config/direnv/direnvrc
+fi
+
+ _log "
+  ______             __              __       __                      __                 
+ /      \\           |  \\            |  \\  _  |  \\                    |  \\                
+|  \$\$\$\$\$\$\\  ______  | \$\$   __       | \$\$ / \\ | \$\$  ______    ______  | \$\$   __   _______ 
+| \$\$  | \$\$ |      \\ | \$\$  /  \\      | \$\$/  \$\\| \$\$ /      \\  /      \\ | \$\$  /  \\ /       \\
+| \$\$  | \$\$  \\\$\$\$\$\$\$\\| \$\$_/  \$\$      | \$\$  \$\$\$\\ \$\$|  \$\$\$\$\$\$\\|  \$\$\$\$\$\$\\| \$\$_/  \$\$|  \$\$\$\$\$\$\$
+| \$\$  | \$\$ /      \$\$| \$\$   \$\$       | \$\$ \$\$\\\$\$\\\$\$| \$\$  | \$\$| \$\$   \\\$\$| \$\$   \$\$  \\\$\$    \\ 
+| \$\$__/ \$\$|  \$\$\$\$\$\$\$| \$\$\$\$\$\$\\       | \$\$\$\$  \\\$\$\$\$| \$\$__/ \$\$| \$\$      | \$\$\$\$\$\$\\  _\\\$\$\$\$\$\$\\
+ \\\$\$    \$\$ \\\$\$    \$\$| \$\$  \\\$\$\\      | \$\$\$    \\\$\$\$ \\\$\$    \$\$| \$\$      | \$\$  \\\$\$\\|       \$\$
+  \\\$\$\$\$\$\$   \\\$\$\$\$\$\$\$ \\\$\$   \\\$\$       \\\$\$      \\\$\$  \\\$\$\$\$\$\$  \\\$\$       \\\$\$   \\\$\$ \\\$\$\$\$\$\$\$ 
+  
+  "
+
 
 if [ -f "$HOME/.laptop.local" ]; then
   _log "Running your customizations from ~/.laptop.local ..."
