@@ -121,15 +121,19 @@ install_homebrew(){
   fi
 }
 
-install_nvm(){
+source_nvm(){
   if [ -f "$HOME/.nvm" ]; then
     # try to source nvm
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
   fi
+}
+install_nvm(){
+  source_nvm
   if ! command -v nvm >/dev/null; then
     _log "Installing / Updating Node Version Manager ..."
     local installed="$(curl -fsSL  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | /bin/sh)"
+    source_nvm
   fi
 }
 
@@ -163,8 +167,6 @@ update_shell() {
     brew install fish
   fi
   
-  setup_fish
-
   _log "Changing your shell to fish ..."
   if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
     _log "Adding '$shell_path' to /etc/shells"
@@ -193,6 +195,8 @@ case "$SHELL" in
     update_shell
     ;;
 esac
+
+setup_fish
 
 if brew list | grep -Fq brew-cask; then
   _log "Uninstalling old Homebrew-Cask ..."
