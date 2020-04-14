@@ -253,7 +253,7 @@ brew link --force heroku
 
 install_nvm
 
-if [ -f "$HOME/.config/direnv/helpers.sh" ]; then
+if [ ! -f "$HOME/.config/direnv/helpers.sh" ]; then
   _log "Installing direnv helpers"
   curl -o ~/.config/direnv/helpers.sh --create-dirs https://raw.githubusercontent.com/steve-ross/direnv-helpers/master/helpers.sh && echo -n "source ~/.config/direnv/helpers.sh" >> ~/.config/direnv/direnvrc
 fi
