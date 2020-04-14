@@ -223,7 +223,7 @@ brew "graphicsmagick"
 # Programming language prerequisites and package managers
 brew "coreutils"
 brew "bcrypt"
-brew "gpg-suite"
+cask "gpg-suite"
 brew "yarn"
 
 # Databases
