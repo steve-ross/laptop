@@ -227,7 +227,7 @@ brew "yarn"
 cask "gpg"
 
 # Tools & Apps
-brew "iterm2"
+cask "iterm2"
 cask "1password"
 cask "dropbox"
 cask "google-chrome"
