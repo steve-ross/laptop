@@ -158,7 +158,6 @@ update_shell() {
     sudo sh -c "echo $shell_path >> /etc/shells"
   fi
   sudo chsh -s "$shell_path" "$USER"
-  fi
 }
 
 install_homebrew
