@@ -196,6 +196,7 @@ case "$SHELL" in
     ;;
 esac
 
+# shellcheck disable=SC1090
 setup_fish
 
 if brew list | grep -Fq brew-cask; then
