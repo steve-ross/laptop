@@ -70,7 +70,7 @@ fi
 
 append_to_fishfile() {
   local text="$1"
-  local file="$HOME/.config/fish/fishfile.txt"
+  local file="$HOME/.config/fish/fishfile"
   append_to_file "$file" "$text" 
 }
 
@@ -93,7 +93,7 @@ append_to_file() {
 append_to_fishconfig(){
   local text="$1"
   local hardreturn="${2:-0}"
-  local file="$HOME/.config/fish/config.fish.txt"
+  local file="$HOME/.config/fish/config.fish"
   append_to_file "$file" "$text" "$hardreturn"
 }
 
@@ -130,6 +130,7 @@ install_nvm(){
 
 setup_fish(){
   _log "configuring fish shell..."
+  mkdir -p $HOME/config/fish
   fisher
   append_to_fishconfig "#source iterm integration" 1
   append_to_fishconfig "test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish"
