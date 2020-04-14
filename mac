@@ -222,9 +222,9 @@ brew "graphicsmagick"
 
 # Programming language prerequisites and package managers
 brew "coreutils"
-brew 'bcrypt'
+brew "bcrypt"
 brew "yarn"
-cask "gpg"
+brew "gpg-suite"
 
 # Tools & Apps
 cask "iterm2"
