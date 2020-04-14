@@ -153,8 +153,9 @@ update_shell() {
   if [ -z "$shell_path" ]; then
     _log "Installing fish shell..."
     brew install fish
-    setup_fish
   fi
+  
+  setup_fish
 
   _log "Changing your shell to fish ..."
   if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
