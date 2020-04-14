@@ -132,10 +132,10 @@ setup_fish(){
   fisher
   append_to_fishconfig "#source iterm integration" 1
   append_to_fishconfig "test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish"
-  append_to_fishconfig "alias m ""meteor""" 1
-  append_to_fishconfig "alias c. ""code ."""
-  append_to_fishconfig "alias c ""code"""
-  append_to_fishconfig "alias git ""hub"""
+  append_to_fishconfig "alias m 'meteor'" 1
+  append_to_fishconfig "alias c. 'code .'"
+  append_to_fishconfig "alias c 'code'"
+  append_to_fishconfig "alias git 'hub'"
   append_to_fishconfig "set -g fish_emoji_width 2" 1
   append_to_fishconfig "eval (starship init fish)" 1
   append_to_fishconfig "eval (direnv hook fish)" 1
@@ -186,10 +186,10 @@ fi
 _log "Updating Homebrew formulae ..."
 brew update --force # https://github.com/Homebrew/brew/issues/1151
 brew bundle --file=- <<EOF
-tap "mongodb/brew"
 tap "heroku/brew"
-tap "shopify/shopify"
 tap "homebrew/cask-fonts"
+tap "mongodb/brew"
+tap "shopify/shopify"
 
 # Unix
 brew "autojump"
@@ -223,27 +223,28 @@ brew "graphicsmagick"
 # Programming language prerequisites and package managers
 brew "coreutils"
 brew "bcrypt"
-brew "yarn"
 brew "gpg-suite"
+brew "yarn"
+
+# Databases
+brew "mongodb/brew/mongodb-community"
+brew "redis"
 
 # Tools & Apps
-cask "iterm2"
 cask "1password"
+cask "adobe-creative-cloud"
 cask "dropbox"
+cask "envkey"
 cask "google-chrome"
 cask "harvest"
+cask "iterm2"
 cask "skitch"
 cask "slack"
 cask "spotify"
 cask "visual-studio-code"
-cask "adobe-creative-cloud"
 
 # Fonts
 cask "font-fira-code"
-
-# Databases
-brew "redis"
-brew "mongodb/brew/mongodb-community"
 EOF
 
 _log "Update heroku binary ..."
