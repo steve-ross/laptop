@@ -98,17 +98,16 @@ append_to_fishconfig(){
 }
 
 fisher(){
-
-read -r -d '' fisher <<'EOF'
-
+  
+local fisher=$(cat <<'END_HEREDOC'
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
   curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
   fish -c fisher
 end
-
-EOF
-  append_to_fishconfig "$fisher"
+END_HEREDOC
+)
+  append_to_fishconfig "$fisher" 1
 }
 
 
@@ -140,6 +139,7 @@ install_nvm(){
 setup_fish(){
   _log "configuring fish shell..."
   mkdir -p $HOME/.config/fish
+  # shellcheck disable=SC1090
   fisher
   append_to_fishconfig "#source iterm integration" 1
   append_to_fishconfig "test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish"
