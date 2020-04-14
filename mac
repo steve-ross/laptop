@@ -130,7 +130,7 @@ install_nvm(){
 
 setup_fish(){
   _log "configuring fish shell..."
-  mkdir -p $HOME/config/fish
+  mkdir -p $HOME/.config/fish
   fisher
   append_to_fishconfig "#source iterm integration" 1
   append_to_fishconfig "test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish"
