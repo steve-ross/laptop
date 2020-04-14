@@ -144,6 +144,7 @@ setup_fish(){
   append_to_fishconfig "alias c 'code'"
   append_to_fishconfig "alias git 'hub'"
   append_to_fishconfig "set -g fish_emoji_width 2" 1
+  append_to_fishconfig "[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish" 1
   append_to_fishconfig "eval (starship init fish)" 1
   append_to_fishconfig "eval (direnv hook fish)" 1
 
