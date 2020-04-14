@@ -167,6 +167,14 @@ update_shell() {
   sudo chsh -s "$shell_path" "$USER"
 }
 
+install_direnv_helpers(){
+  if [ ! -f "$HOME/.config/direnv/helpers.sh" ]; then
+    _log "Installing direnv helpers"
+    curl -o ~/.config/direnv/helpers.sh --create-dirs https://raw.githubusercontent.com/steve-ross/direnv-helpers/master/helpers.sh
+  fi
+  append_to_file "$HOME/.config/direnv/direnvrc" "source ~/.config/direnv/helpers.sh" 
+}
+
 install_homebrew
 
 case "$SHELL" in
@@ -254,11 +262,9 @@ brew unlink heroku
 brew link --force heroku
 
 install_nvm
+install_direnv_helpers
 
-if [ ! -f "$HOME/.config/direnv/helpers.sh" ]; then
-  _log "Installing direnv helpers"
-  curl -o ~/.config/direnv/helpers.sh --create-dirs https://raw.githubusercontent.com/steve-ross/direnv-helpers/master/helpers.sh && echo -n "source ~/.config/direnv/helpers.sh" >> ~/.config/direnv/direnvrc
-fi
+
 
 if [ -f "$HOME/.laptop.local" ]; then
   _log "Running your customizations from ~/.laptop.local ..."
