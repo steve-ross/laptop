@@ -189,6 +189,7 @@ brew bundle --file=- <<EOF
 tap "mongodb/brew"
 tap "heroku/brew"
 tap "shopify/shopify"
+tap "homebrew/cask-fonts"
 
 # Unix
 brew "autojump"
@@ -228,6 +229,9 @@ cask "gpg"
 # Tools
 brew "iterm2"
 cask "visual-studio-code"
+
+# Fonts
+cask "font-fira-code"
 
 # Databases
 brew "redis"
