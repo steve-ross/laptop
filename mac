@@ -228,16 +228,17 @@ brew 'bcrypt'
 brew "yarn"
 cask "gpg"
 
-# Tools
+# Tools & Apps
 brew "iterm2"
-cask '1password'
-cask 'dropbox'
-cask 'google-chrome'
-cask 'harvest'
-cask 'skitch'
-cask 'slack'
-cask 'spotify'
+cask "1password"
+cask "dropbox"
+cask "google-chrome"
+cask "harvest"
+cask "skitch"
+cask "slack"
+cask "spotify"
 cask "visual-studio-code"
+cask "adobe-creative-cloud"
 
 # Fonts
 cask "font-fira-code"
