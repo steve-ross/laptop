@@ -128,6 +128,7 @@ install_nvm(){
       /bin/bash -c "$(curl -fsSL  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
   fi
 }
+
 setup_fish(){
   _log "configuring fish shell..."
   fisher
@@ -223,11 +224,19 @@ brew "graphicsmagick"
 
 # Programming language prerequisites and package managers
 brew "coreutils"
+brew 'bcrypt'
 brew "yarn"
 cask "gpg"
 
 # Tools
 brew "iterm2"
+cask '1password'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'harvest'
+cask 'skitch'
+cask 'slack'
+cask 'spotify'
 cask "visual-studio-code"
 
 # Fonts
