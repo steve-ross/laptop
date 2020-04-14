@@ -49,9 +49,6 @@ Optionally, review the log:
 less ~/laptop.log
 ```
 
-Optionally, [install thoughtbot/dotfiles][dotfiles].
-
-[dotfiles]: https://github.com/thoughtbot/dotfiles#install
 
 Debugging
 ---------
@@ -59,7 +56,7 @@ Debugging
 Your last Laptop run will be saved to `~/laptop.log`.
 Read through it to see if you can debug the issue yourself.
 If not, copy the lines where the script failed into a
-[new GitHub Issue](https://github.com/thoughtbot/laptop/issues/new) for us.
+[new GitHub Issue](https://github.com/steve-ross/laptop/issues/new) for us.
 Or, attach the whole log file as an attachment.
 
 What it sets up
@@ -126,10 +123,10 @@ Programming languages, package managers, and configuration:
 
 Databases:
 
-* [Postgres] for storing relational data
+* [Mongo] for storing document data
 * [Redis] for storing key-value data
 
-[Postgres]: http://www.postgresql.org/
+[MongoDB]: http://www.mongodb.com/
 [Redis]: http://redis.io/
 
 It should take less than 15 minutes to install (depends on your machine).
@@ -184,7 +181,7 @@ Laptop functions such as `fancy_echo` and
 `gem_install_or_update`
 can be used in your `~/.laptop.local`.
 
-See the [wiki](https://github.com/thoughtbot/laptop/wiki)
+See the [wiki](https://github.com/steve-ross/laptop/wiki)
 for more customization examples.
 
 Contributing
@@ -203,6 +200,7 @@ brew install shellcheck
 
 Thank you, [contributors]!
 
+[contributors]: https://github.com/steve-ross/laptop/graphs/contributors
 [contributors]: https://github.com/thoughtbot/laptop/graphs/contributors
 
 By participating in this project,
@@ -218,18 +216,3 @@ It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
-
-About thoughtbot
-----------------
-
-![thoughtbot](https://thoughtbot.com/brand_assets/93:44.svg)
-
-Laptop is maintained and funded by thoughtbot, inc.
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
-
-We are passionate about open source software.
-See [our other projects][community].
-We are [available for hire][hire].
-
-[community]: https://thoughtbot.com/community?utm_source=github
-[hire]: https://thoughtbot.com?utm_source=github
