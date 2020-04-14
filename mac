@@ -116,7 +116,7 @@ EOF
 install_homebrew(){
   if ! command -v brew >/dev/null; then
     _log "Installing Homebrew ..."
-     "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+     "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | /bin/sh)"
      export PATH="/usr/local/bin:$PATH"
   fi
 }
@@ -129,7 +129,7 @@ install_nvm(){
   fi
   if ! command -v nvm >/dev/null; then
     _log "Installing / Updating Node Version Manager ..."
-    local installed="$(curl -fsSL  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
+    local installed="$(curl -fsSL  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | /bin/sh)"
   fi
 }
 
