@@ -122,6 +122,12 @@ install_homebrew(){
   fi
 }
 
+install_nvm(){
+  if ! command -v nvm >/dev/null; then
+    _log "Installing Node Version Manager ..."
+      /bin/bash -c "$(curl -fsSL  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh)"
+  fi
+}
 setup_fish(){
   _log "configuring fish shell..."
   fisher
