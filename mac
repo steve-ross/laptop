@@ -260,9 +260,12 @@ cask "google-chrome"
 cask "gitkraken"
 cask "harvest"
 cask "iterm2"
+cask "moom"
+cask "no-ip-duc"
 cask "skitch"
 cask "slack"
 cask "spotify"
+cask "transmit"
 cask "visual-studio-code"
 
 # Fonts
