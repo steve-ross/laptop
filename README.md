@@ -69,17 +69,58 @@ macOS tools:
 
 [Homebrew]: http://brew.sh/
 
+macoOS Applications:
+
+- [1Password] password manager
+- [Adobe Creative Cloud] for installing Adobe apps
+- [Dropbox] for cloud storage
+- [Env Key] to manage dotfiles and environment variables
+- [Google Chrome], the web browser
+- [GitKracken] to better visualize and manage git
+- [Harvest] for time tracking
+- [iTerm2] to replace the default console app
+- [Moom] for arranging windows
+- [No IP Dynamic Update Client] for managing dynamic IPs
+- [Skitch] for screenshot annotations
+- [Slack] for team / collaborative communications
+- [Spotify] for music
+- [Transmit] for all things remote storage (FTP etc)
+- [Visual Studio Code] text editor for programming
+
+
+[1Password]: https://1password.com/
+[Adobe Creative Cloud]: http://adobe.com
+[Dropbox]: http://dropbox.com
+[Env Key]: https://www.envkey.com/
+[Google Chrome]: https://www.google.com/chrome/
+[GitKracken]: https://www.gitkraken.com/
+[Harvest]: https://getharvest.com
+[iTerm2]: https://iterm2.com/
+[Moom]: https://manytricks.com/moom/
+[No IP Dynamic Update Client]: https://www.noip.com/download?page=mac
+[Skitch]: https://evernote.com/products/skitch
+[Slack]: https://slack.com
+[Spotify]: https://spotify.com
+[Transmit]: https://panic.com/transmit/
+[Visual Studio Code]: https://code.visualstudio.com/
+
+
 Unix tools:
 
-* [Universal Ctags] for indexing files for vim tab completion
-* [Git] for version control
-* [OpenSSL] for Transport Layer Security (TLS)
-* [RCM] for managing company and personal dotfiles
-* [The Silver Searcher] for finding things in files
-* [Tmux] for saving project state and switching between projects
-* [Watchman] for watching for filesystem events
-* [Zsh] as your shell
+- [Autojump] to move between directories
+- [Direnv] and [Direnv Helpers] to auto-layout projects 
+- [Fish] as your shell
+  - addons: [Starship], [Direnv], [Fira Code]
+- [Terminal Notifier] long running shell process alerts/notifications
+- [Git] for version control
+- [OpenSSL] for Transport Layer Security (TLS)
+- [RCM] for managing company and personal dotfiles
+- [The Silver Searcher] for finding things in files
+- [Tmux] for saving project state and switching between projects
+- [Watchman] for watching for filesystem events
 
+[Fira Code]: https://github.com/tonsky/FiraCode
+[Autojump]: https://github.com/wting/autojump
 [Universal Ctags]: https://ctags.io/
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
@@ -87,7 +128,13 @@ Unix tools:
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Tmux]: http://tmux.github.io/
 [Watchman]: https://facebook.github.io/watchman/
-[Zsh]: http://www.zsh.org/
+[Fish]: https://fishshell.com/
+[Starship]: https://starship.rs/
+[Direnv]: https://direnv.net/
+[Direnv Helpers]: https://github.com/steve-ross/direnv-helpers
+[Terminal Notifier]: https://github.com/julienXX/terminal-notifier
+[Git-Flow]: https://datasift.github.io/gitflow/IntroducingGitFlow.html
+[Hub]: https://hub.github.com/
 
 Heroku tools:
 
@@ -98,28 +145,26 @@ Heroku tools:
 
 GitHub tools:
 
-* [Hub] for interacting with the GitHub API
+- [Hub] for interacting with the GitHub API
+- [Git-Flow] branching model
 
 [Hub]: http://hub.github.com/
 
 Image tools:
 
-* [ImageMagick] for cropping and resizing images
+* [GraphicksMagick] for cropping and resizing images
 
 Programming languages, package managers, and configuration:
 
-* [asdf-vm] for managing programming language versions
-* [Bundler] for managing Ruby libraries
-* [Node.js] and [npm], for running apps and installing JavaScript packages
-* [Ruby] stable for writing general-purpose code
-* [Yarn] for managing JavaScript packages
+- [Node Version Manager] for managing node versions
+- [Node.js] and [npm], for running apps and installing JavaScript packages
+- [Yarn] for managing JavaScript packages
 
-[Bundler]: http://bundler.io/
-[ImageMagick]: http://www.imagemagick.org/
+
+[GraphicksMagick]: http://www.graphicsmagick.org/
 [Node.js]: http://nodejs.org/
 [npm]: https://www.npmjs.org/
-[asdf-vm]: https://github.com/asdf-vm/asdf
-[Ruby]: https://www.ruby-lang.org/en/
+[Node Version Manager]: https://github.com/nvm-sh/nvm
 [Yarn]: https://yarnpkg.com/en/
 
 Databases:
